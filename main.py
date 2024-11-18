@@ -35,3 +35,23 @@ def get_completion():
 #create main window
 root = Tk()
 root.title("OpenAI Completion GUI")
+
+#prompt input area
+prompt_label = tk.Label(root, text = "Enter your prompt:")
+prompt_label.pack(pady = 10)
+
+prompt_entry = tk.Text(root, height = 6, width = 50)
+prompt_entry.pack(pady = 10)
+
+#submit button
+submit_button = tk.Button(root, text = "Submit", command = get_completion)
+submit_button.pack(pady = 10)
+
+#output area
+output_label = tk.Label(root, text = "Output:")
+output_label.pack(pady = 10)
+
+output_box = tk.Text(root, height = 10, width = 50, wrap = tk.Word, state = tk.DISABLED)
+output_box.pack(pady = 10)
+
+root.mainloop()
